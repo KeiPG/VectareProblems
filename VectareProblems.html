@@ -1,0 +1,30 @@
+
+	<body>
+		<canvas id = canvas height =500 width = 500>
+		</canvas>
+		<script>
+			
+			
+			function Main(){
+				this.ctx = canvas.getContext('2d');
+				this.scale = 20;
+				this.nx = Math.floor(canvas.width/this.scale);
+				this.ny = Math.floor(canvas.height/this.scale);
+				
+
+				this.ctx.font = "10px Comic Sans MS";
+				this.ctx.fillStyle = "red";
+				this.ctx.textAlign = "center";
+				this.ctx.fillText("Your score is ", 400, 20);
+				
+				this.problemOne = function(){
+				};
+				
+			}
+			
+			window.onload = function(){
+				new Main();
+				
+			}
+		</script>
+	</body>
