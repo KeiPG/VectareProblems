@@ -11,15 +11,22 @@
 				this.nx = Math.floor(canvas.width/this.scale);
 				this.ny = Math.floor(canvas.height/this.scale);
 				
-
-				this.ctx.font = "10px Comic Sans MS";
-				this.ctx.fillStyle = "red";
-				this.ctx.textAlign = "center";
-				this.ctx.fillText("Your score is ", 400, 20);
-				
 				this.problemOne = function(){
+					total = 0;
+					for (let i = 0; i < 1000; i++) {
+						if ((i%3)==0) {
+							total = i + total;
+						}
+						if ((i%5)==0) {
+							total = i + total;
+						}
+					}
+					this.ctx.font = "10px Comic Sans MS";
+					this.ctx.fillStyle = "red";
+					this.ctx.textAlign = "center";
+					this.ctx.fillText("solution to problem 1 is "+total, 400, 20);
 				};
-				
+				this.problemOne();
 			}
 			
 			window.onload = function(){
