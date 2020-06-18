@@ -46,7 +46,27 @@
 					this.ctx.textAlign = "center";
 					this.ctx.fillText("solution to problem 1 is "+total, 400, 20);
 				};
-				this.problemTwo();
+				this.problemThree = function(){
+					temp=0;
+					lNum =0;
+					for (let i = 100; i < 1000; i++) {
+						for (let j = 100; j < 1000; j++) {
+							temp = i*j;
+							revTemp = parseFloat(temp.toString().split('').reverse().join('')) * Math.sign(temp);
+							if(temp == revTemp){
+								if (temp > lNum) {
+									lNum = temp;
+								}
+							}
+						}
+						
+					}
+					this.ctx.font = "10px Comic Sans MS";
+					this.ctx.fillStyle = "red";
+					this.ctx.textAlign = "center";
+					this.ctx.fillText("solution to problem 1 is "+lNum, 400, 20);
+				};
+				this.problemThree();
 			}
 			
 			window.onload = function(){
