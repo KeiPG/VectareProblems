@@ -26,7 +26,27 @@
 					this.ctx.textAlign = "center";
 					this.ctx.fillText("solution to problem 1 is "+total, 400, 20);
 				};
-				this.problemOne();
+
+				this.problemTwo = function(){
+					currentNo = 1;
+					lastNo = 1;
+					temp =0;
+					total = 0;
+					while (currentNo <= 4000000) {
+						temp = currentNo;
+						currentNo = currentNo+lastNo;
+						lastNo = temp;
+						if ((currentNo%2)==0) {
+							total = total + currentNo;
+						}
+						console.log(currentNo);
+					}
+					this.ctx.font = "10px Comic Sans MS";
+					this.ctx.fillStyle = "red";
+					this.ctx.textAlign = "center";
+					this.ctx.fillText("solution to problem 1 is "+total, 400, 20);
+				};
+				this.problemTwo();
 			}
 			
 			window.onload = function(){
