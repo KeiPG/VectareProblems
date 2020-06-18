@@ -44,7 +44,7 @@
 					this.ctx.font = "10px Comic Sans MS";
 					this.ctx.fillStyle = "red";
 					this.ctx.textAlign = "center";
-					this.ctx.fillText("solution to problem 1 is "+total, 400, 20);
+					this.ctx.fillText("solution to problem 2 is "+total, 400, 20);
 				};
 				this.problemThree = function(){
 					temp=0;
@@ -64,9 +64,23 @@
 					this.ctx.font = "10px Comic Sans MS";
 					this.ctx.fillStyle = "red";
 					this.ctx.textAlign = "center";
-					this.ctx.fillText("solution to problem 1 is "+lNum, 400, 20);
+					this.ctx.fillText("solution to problem 3 is "+lNum, 400, 20);
 				};
-				this.problemThree();
+				this.problemFour = function(){
+					loop =true;
+					count = 0;
+					while (loop) {
+						count++;
+						if (((count%11)==0) && ((count%12)==0) && ((count%13)==0) && ((count%14)==0) && ((count%15)==0) && ((count%16)==0) && ((count%17)==0) && ((count%18)==0) && ((count%19)==0) && ((count%20)==0)) {
+							loop = false;
+							this.ctx.font = "10px Comic Sans MS";
+							this.ctx.fillStyle = "red";
+							this.ctx.textAlign = "center";
+							this.ctx.fillText("solution to problem 4 is "+count, 400, 20);
+						}
+					}
+				};
+				this.problemFour();
 			}
 			
 			window.onload = function(){
