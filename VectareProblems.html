@@ -80,7 +80,34 @@
 						}
 					}
 				};
-				this.problemFour();
+				this.problemFive = function(){
+					loop =true;
+					check = false;
+					count = 1;
+					pCount = 0;
+					while (loop) {
+						check = true;
+						count++;
+						for (let i = Math.ceil(count/2); i > 1; i--) {
+							if (count%i==0) {
+								check = false;
+							}
+							
+						}
+						if (check) {
+							pCount++;
+							console.log(count + " " + pCount);
+							if(pCount==10001){
+								loop = false;
+								this.ctx.font = "10px Comic Sans MS";
+								this.ctx.fillStyle = "red";
+								this.ctx.textAlign = "center";
+								this.ctx.fillText("solution to problem 5 is "+count, 400, 20);
+							}
+						}
+					}
+				};
+				this.problemFive();
 			}
 			
 			window.onload = function(){
