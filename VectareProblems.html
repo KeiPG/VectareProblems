@@ -107,7 +107,32 @@
 						}
 					}
 				};
-				this.problemFive();
+				var dim = 8;
+				var sixCount=0;
+				this.problemSix = function(){
+					row = 0;
+					col = 0;
+					this.problemSixRec(row+1,col);
+					console.log("half done");
+					this.problemSixRec(row,col+1);
+					this.ctx.font = "10px Comic Sans MS";
+					this.ctx.fillStyle = "red";
+					this.ctx.textAlign = "center";
+					this.ctx.fillText("solution to problem 6 is "+sixCount, 400, 20);
+				};
+
+				this.problemSixRec = function(row,col){
+					if((row==dim) && (col==dim)){
+						sixCount++;
+					}
+					if(row<dim){
+						this.problemSixRec(row+1,col);
+					}
+					if(col<dim){
+						this.problemSixRec(row,col+1);
+					}
+				};
+				this.problemSix();
 			}
 			
 			window.onload = function(){
