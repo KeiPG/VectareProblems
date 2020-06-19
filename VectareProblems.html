@@ -1,9 +1,13 @@
 
 	<body>
+		<input type="file" name="inputfile"
+            id="inputfile"> 
+    	<br> 
+   
+    	<pre id="output"></pre> 
 		<canvas id = canvas height =500 width = 500>
 		</canvas>
-		<script>
-			
+		<script type="text/javascript">
 			
 			function Main(){
 				this.ctx = canvas.getContext('2d');
@@ -132,7 +136,44 @@
 						this.problemSixRec(row,col+1);
 					}
 				};
-				this.problemSix();
+				class tNode{
+					constructor(data,l,r){
+						this.data = data;
+						this.left = l;
+						this.right = r;
+					}
+					getData
+				}
+				var array2d = [];
+				this.problemSeven = function(){
+					document.getElementById('inputfile').addEventListener('change', function() {
+						var fr=new FileReader(); 
+						fr.onload=function(){ 
+							document.getElementById('output').textContent=fr.result; 
+							var array = fr.result.match(/[^\r\n]+/g);
+							var count =0;
+							var arr;
+							var currentNo =0;
+							array.forEach(function(element){
+								arr = element.split(" ");
+								array2d[count] = arr;
+								count++;
+							});
+							var total =Number(array2d[0][0]);
+							for (let i = 0; i < array2d.length-1; i++) {
+								if (array2d[i+1][currentNo] < array2d[i+1][currentNo+1]) {
+									currentNo++;
+								}
+								console.log(array2d[i+1][currentNo]);
+								total = total + Number(array2d[i+1][currentNo]);
+							}
+							console.log(total);
+							
+						} 
+						fr.readAsText(this.files[0]); 
+					}) 
+				};
+				this.problemSeven();
 			}
 			
 			window.onload = function(){
